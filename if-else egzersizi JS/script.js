@@ -29,7 +29,7 @@ if(car1_fast > car2_fast ){
     car1_point++;
 }
 else {
-    car2_point++
+    car2_point++;
 }
 
 console.log( "car1 puanı: " + car1_point);
@@ -39,7 +39,7 @@ if (car1_point > car2_point){
     console.log("car1 daha uygun.");
 }
 else if(car1_point == car2_point){
-    console.log("iki arabanın da avantajlı yönleri var.")
+    console.log("iki arabanın da avantajlı yönleri var.");
 }
 else{
     console.log("car2 daha uygun.");
