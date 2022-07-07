@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let İsim = "Deniz Ök";
+        let bilgi = "Pamukkale Üniversitesi öğrencisi";
+
+        // İsim kac karakterli ?
+        let karakterSayısı = İsim.length;
+        console.log(karakterSayısı);
+
+        // bilgi kaç kelimeden oluşuyor ?
+        let kelime = bilgi.split(" ").length;
+        console.log(kelime);
+        
+        // isim Den kelimesiyle mi başlıyor ?
+        // startwith methodu kullanılabilir.
+        let kontrol = İsim.substring(0,3);
+        if( kontrol == "Den"){
+            console.log("Doğru");
+        }
+        else{
+            console.log("yanlış");
+
+        }
+
+        // bilgi içerisinde sınıf kelimesi var mı ?
+
+        let varmı = bilgi.includes("Sınıf") ? 1 : -1;
+        console.log(varmı);
+        
+        // İsim ve bilgiyi tek bir değişkende yazdır.
+
+        let full = İsim + ' '+ bilgi;
+        console.log(full);
+
+        // İsim değişkenindeki bütün harfler küçük olsun.
+        let küçükHarf = İsim.toLowerCase();
+        console.log(küçükHarf);
+
+        //  bilgi değişkeninde Pamukkale Üniversitesi PAÜ olarak değiştir.
+        let yeni = bilgi.replace("Pamukkale Üniversitesi", "PAÜ");
+        console.log(yeni);
+            
+    </script>
+    
+</body>
+</html>
