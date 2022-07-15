@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div class="header">
+        <h1 class="başlık">Deniz ÖK</h1>
+    </div>
+
+    <div class="main">
+        <p id="yazı">Deniz Ök Pamkukkale Üniversitesi.</p>
+    </div>
+
+    <div class="footer">        
+        <h2 class="Baş-2">BAŞLIK 2</h2>
+
+    </div>
+    <script>
+        // class ismi header olan etiket bilgisini yazdır.
+
+        const baş = document.querySelector('.header');
+        console.log(baş);
+
+        // header classı kapsamının rengini ve yazı boyutunu değiştir.
+        baş.style = 'color:blue;font-size:30px';
+
+        // id'si yazı olan etiketi yazdır.
+
+        const main = document.querySelector('#yazı');
+        console.log(main);
+       
+        // p etiketine yeni metin ekle.
+        const paragraf = document.querySelector('p');
+        paragraf.append(" PAÜ Bilgisyar Mühendisliği.");
+        console.log(paragraf);
+
+        // sayfanın url adresini döndür.
+
+        const adres = document.URL;
+        console.log(adres);
+
+        // classı Baş-2 olan elementi sil.
+
+        const silinecek = document.querySelector('.Baş-2');
+        
+        silinecek.remove();
+    </script>
+</body>
+</html>
