@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        ToDo App 
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" id="txtTaskName" class="form-control">
+                                <button type="submit" class="btn btn-primary" id="btnAddNewTask">Ekle</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <button id="btnClear" class="btn btn-danger btn-sm float-end">Temizle</button>
+                    </div>
+                    <ul id="task-list" class="list-group-flush"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <script>
+
+        let gorevListesi = [
+            {'id':1, 'GörevAdı':'Görev 1'},
+            {'id':2, 'GörevAdı':'Görev 2'},
+            {'id':3, 'GörevAdı':'Görev 3'}];
+            
+
+        
+
+        Görevler();
+
+        function Görevler(){
+            ul = document.getElementById('task-list');
+            ul.innerHTML = '';
+            for(let görev of gorevListesi){
+            let li = `
+                <li class="task list-group-item">
+                    <div class="form-check">
+                        <input type="checkbox" id="${görev.id}" class="form-check-input">
+                        <label for="${görev.id}" class="form-check-label">${görev.GörevAdı}</label>
+                    </div>
+                </li>
+            `;
+            ul.insertAdjacentHTML('beforeend',li);
+        }
+        }
+
+        
+        const ekle = document.querySelector('#btnAddNewTask');
+        const press = document.querySelector('#btnAddNewTask');
+
+        function yeniGorev(e){
+            const taskInput = document.querySelector('#txtTaskName');
+
+            if(taskInput.value == ''){
+                alert('Görev Giriniz...');
+            }
+            else{
+                gorevListesi.push({'id':gorevListesi.length+1, 'GörevAdı': taskInput.value});
+                Görevler();
+            }
+            e.preventDefault();
+        }
+
+
+        function pressEnter(){
+            if(e.key == 'Enter'){
+                document.getElementById('#btnAddNewTask').click();
+            }
+        }
+
+
+        
+        ekle.addEventListener('click', yeniGorev);
+        press.addEventListener('keypress',pressEnter);
+        
+    </script>
+
+
+
+</body>
+</html>
